@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Escape Masivo - 30 Segundos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="ui-overlay">
+        <div class="text-4xl font-black" id="timerDisplay">30.0s</div>
+        <div class="text-sm opacity-80 uppercase tracking-widest">Encuentra la salida verde</div>
+    </div>
+
+    <div id="gameModal" class="modal">
+        <div class="modal-content bg-slate-800 p-8 rounded-2xl border-4 border-indigo-500 max-w-sm w-full text-center text-white">
+            <h1 id="modalTitle" class="text-4xl font-black mb-4">ESCAPE MASIVO</h1>
+            <p id="modalDesc" class="mb-6 opacity-90">Tienes 30 segundos para cruzar el laberinto. El tiempo no perdona.</p>
+            <button id="startBtn" class="bg-indigo-600 hover:bg-indigo-500 px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105">
+                EMPEZAR JUEGO
+            </button>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="mobile-controls md:hidden">
+        <div class="control-grid">
+            <div></div>
+            <button id="btnUp" class="ctrl-btn">↑</button>
+            <div></div>
+            <button id="btnLeft" class="ctrl-btn">←</button>
+            <button id="btnDown" class="ctrl-btn">↓</button>
+            <button id="btnRight" class="ctrl-btn">→</button>
+        </div>
+    </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
