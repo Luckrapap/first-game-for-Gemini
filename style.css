@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0f172a;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    touch-action: none;
+}
+
+canvas {
+    display: block;
+    image-rendering: pixelated;
+}
+
+.ui-overlay {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    pointer-events: none;
+    color: white;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.timer-low {
+    color: #ef4444;
+    animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+}
+
+/* Controles móviles */
+.mobile-controls {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    opacity: 0.6;
+}
+
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.ctrl-btn {
+    width: 65px;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.1s;
+}
+
+.ctrl-btn:active {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0.95);
+}
